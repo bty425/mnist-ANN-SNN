@@ -27,9 +27,6 @@ def infer(image_path):
             prediction = output.argmax(dim=1, keepdim=True)
             confidence = torch.softmax(output, dim=1).max().item()
 
-        print(f"�KpW: {prediction.item()}")
-        print(f"n�: {confidence:.4f}")
-
         return prediction.item(), confidence
 
     except Exception as e:
